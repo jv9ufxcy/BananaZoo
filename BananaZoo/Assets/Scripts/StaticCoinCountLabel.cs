@@ -15,6 +15,6 @@ public class StaticCoinCountLabel : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        labelText.text = "Guests: " + StaticCoin.CoinCount/*.ToString()*/;
+        labelText.text = "Tickets Sold " + StaticCoin.CoinCount/*.ToString()*/;
     }
 }

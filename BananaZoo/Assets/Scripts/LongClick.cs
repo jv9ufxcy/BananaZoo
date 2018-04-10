@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class LongClick : MonoBehaviour
+public class LongClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private bool pointerDown;
     private float pointerDownTimer;
@@ -34,11 +34,12 @@ public class LongClick : MonoBehaviour
             pointerDownTimer += Time.deltaTime;
             if (pointerDownTimer>=requiredHoldTime)
             {
-                if (onLongClick!=null)
+                if (onLongClick != null)
                     onLongClick.Invoke();
 
                 Reset();
             }
+            fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
         }
 	}
 

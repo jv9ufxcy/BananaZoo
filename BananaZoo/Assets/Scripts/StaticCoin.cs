@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaticCoin : MonoBehaviour 
 {
     public static int CoinCount {get; private set;}
-    private void OnLongCLick()
+    public void OnLongCLick()
     {
         CoinCount++;
     }
