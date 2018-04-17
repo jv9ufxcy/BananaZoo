@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Habitat1 : MonoBehaviour 
 {
     Random r = new Random();
-    int habitat1Random = r.Next(31);
+    //int habitat1Random = r.Next(31);
     
     Text labelText;
 
@@ -14,6 +14,6 @@ public class Habitat1 : MonoBehaviour
 	void Start ()
     {
         
-        labelText.text = "Habitat 1 temp = " + r.Next(31,110);
+        //labelText.text = "Habitat 1 temp = " + r.Next(31,110);
     }
 }
