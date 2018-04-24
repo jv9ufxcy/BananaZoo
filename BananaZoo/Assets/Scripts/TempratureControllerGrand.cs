@@ -13,9 +13,16 @@ public class TempratureControllerGrand : MonoBehaviour
     bool habitat3check = false;
 
     //The answeres input by the player into the 3 text fields
-    public string hab1Input;
-    public string hab2Input;
-    public string hab3Input;
+    string hab1Input;
+    string hab2Input;
+    string hab3Input;
+
+    [SerializeField]
+    Text hab1InputText;
+    [SerializeField]
+    Text hab2InputText;
+    [SerializeField]
+    Text hab3InputText;
 
     //The random number used as the answer
     int hab1Answer;
@@ -54,6 +61,10 @@ public class TempratureControllerGrand : MonoBehaviour
 
     void FixedUpdate ()
     {
+        hab1Input = hab1InputText.text;
+        hab2Input = hab2InputText.text;
+        hab3Input = hab3InputText.text;
+
         //Checks the players inputs against the answers
         if (hab1Answer.ToString() == hab1Input)
             habitat1check = true;

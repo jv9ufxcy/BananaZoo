@@ -12,7 +12,7 @@ public class CountDownTimer : MonoBehaviour
     Image fillImg;
 
     [SerializeField]
-    float timerAmmountSeconds;
+    float timerAmmountSeconds = 20;
 
     float time;
 
