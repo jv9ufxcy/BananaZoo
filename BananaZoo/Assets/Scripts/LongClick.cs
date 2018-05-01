@@ -38,10 +38,17 @@ public class LongClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     onLongClick.Invoke();
 
                 Reset();
+                ResetMarathon();
             }
             fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
         }
 	}
+
+    private void ResetMarathon()
+    {
+        pointerDownTimer = 0;
+        fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+    }
 
     private void Reset()
     {

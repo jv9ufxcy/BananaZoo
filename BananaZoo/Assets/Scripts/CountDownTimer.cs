@@ -14,6 +14,9 @@ public class CountDownTimer : MonoBehaviour
     [SerializeField]
     float timerAmmountSeconds = 20;
 
+    [SerializeField]
+    float clean = 5;
+
     float time;
 
     // Use this for initialization
@@ -26,10 +29,18 @@ public class CountDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (time > timerAmmountSeconds)
+            time = timerAmmountSeconds;
+
         if (time > 0)
         {
             time -= Time.deltaTime;
             fillImg.fillAmount = time / timerAmmountSeconds;
         }
+    }
+
+    public void Clean()
+    {
+        time+=clean;
     }
 }
