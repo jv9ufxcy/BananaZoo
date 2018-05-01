@@ -37,7 +37,6 @@ public class LongClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 if (onLongClick != null)
                     onLongClick.Invoke();
 
-                Reset();
                 ResetMarathon();
             }
             fillImage.fillAmount = pointerDownTimer / requiredHoldTime;

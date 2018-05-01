@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CountDownTimer : MonoBehaviour
 {
-    //Code thanks to Katus Production
+    //Timer bar code thanks to Katus Production
     //Video link: https://www.youtube.com/watch?v=98s8r0Pjb1g
 
 
@@ -18,6 +18,15 @@ public class CountDownTimer : MonoBehaviour
     float clean = 5;
 
     float time;
+
+    [SerializeField]
+    bool tempControll;
+    [SerializeField]
+    bool habCleanControll;
+    [SerializeField]
+    GameObject Broken;
+    [SerializeField]
+    GameObject self;
 
     // Use this for initialization
     void Start()
@@ -36,6 +45,18 @@ public class CountDownTimer : MonoBehaviour
         {
             time -= Time.deltaTime;
             fillImg.fillAmount = time / timerAmmountSeconds;
+        }
+
+        if (time <= 0 && tempControll == true)
+        {
+            Broken.SetActive(true);
+            self.SetActive(false);
+        }
+
+        if (time <= 0 && habCleanControll == true)
+        {
+            Broken.SetActive(true);
+            self.SetActive(false);
         }
     }
 
