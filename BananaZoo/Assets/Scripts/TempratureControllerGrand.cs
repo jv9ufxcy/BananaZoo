@@ -11,6 +11,7 @@ public class TempratureControllerGrand : MonoBehaviour
     bool habitat1check = false;
     bool habitat2check = false;
     bool habitat3check = false;
+    private bool isCorrectTemp_UseProperty = false;
 
     //The answeres input by the player into the 3 text fields
     string hab1Input;
@@ -37,6 +38,19 @@ public class TempratureControllerGrand : MonoBehaviour
     [SerializeField]
     Text hab3AnswerText;
 
+    public bool IsCorrectTemp
+    {
+        get
+        {
+            return isCorrectTemp_UseProperty;
+        }
+
+        set
+        {
+            isCorrectTemp_UseProperty = value;
+        }
+    }
+
     #endregion
 
     private void Awake() //Starts when the moduel becomes active
@@ -54,9 +68,9 @@ public class TempratureControllerGrand : MonoBehaviour
 
     private void SendTextToBox() //Sends the new randomly generated number to its text field
     {
-        hab1AnswerText.text = "Habitat 1 temp: " + hab1Answer.ToString() + "°";
-        hab2AnswerText.text = "Habitat 2 temp: " + hab2Answer.ToString() + "°";
-        hab3AnswerText.text = "Habitat 3 temp: " + hab3Answer.ToString() + "°";
+        hab1AnswerText.text = "Stingray Bay: " + hab1Answer.ToString() + "°";
+        hab2AnswerText.text = "Cuttlefish Corner: " + hab2Answer.ToString() + "°";
+        hab3AnswerText.text = "Dolphin District: " + hab3Answer.ToString() + "°";
     }
 
     void FixedUpdate ()
@@ -75,6 +89,9 @@ public class TempratureControllerGrand : MonoBehaviour
 
         //Once all inputs = their answers the pannel will be won
         if (habitat1check == true && habitat2check == true && habitat3check == true)
+        {
+            IsCorrectTemp = true;
+        }
             Debug.Log("Temp Controller Success");
 
         //Debugs outputing the input fields to check charecters are being read properly

@@ -166,6 +166,7 @@ MonoBehaviour:
   habCleanControll: 0
   Broken: {fileID: 845790220}
   self: {fileID: 1805633375}
+  tempControllerGrand: {fileID: 1805633380}
 --- !u!114 &14422000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,6 +1112,7 @@ MonoBehaviour:
   habCleanControll: 1
   Broken: {fileID: 783254166}
   self: {fileID: 1737959843}
+  tempControllerGrand: {fileID: 0}
 --- !u!114 &264620015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2105,6 +2107,7 @@ MonoBehaviour:
   habCleanControll: 1
   Broken: {fileID: 783254166}
   self: {fileID: 1737959843}
+  tempControllerGrand: {fileID: 0}
 --- !u!114 &715462944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3685,6 +3688,7 @@ MonoBehaviour:
   habCleanControll: 1
   Broken: {fileID: 783254166}
   self: {fileID: 1737959843}
+  tempControllerGrand: {fileID: 0}
 --- !u!114 &1274542217
 MonoBehaviour:
   m_ObjectHideFlags: 0

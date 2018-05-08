@@ -28,6 +28,9 @@ public class CountDownTimer : MonoBehaviour
     [SerializeField]
     GameObject self;
 
+    [SerializeField] private TempratureControllerGrand tempControllerGrand;
+
+
     // Use this for initialization
     void Start()
     {
@@ -38,6 +41,13 @@ public class CountDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+            CountDownForTemperature();
+        
+    }
+
+    private void CountDownForTemperature()
+    {
         if (time > timerAmmountSeconds)
             time = timerAmmountSeconds;
 
@@ -47,10 +57,13 @@ public class CountDownTimer : MonoBehaviour
             fillImg.fillAmount = time / timerAmmountSeconds;
         }
 
-        if (time <= 0 && tempControll == true)
+        if (tempControllerGrand.IsCorrectTemp == false)
         {
-            Broken.SetActive(true);
-            self.SetActive(false);
+            if (time <= 0 && tempControll == true)
+            {
+                Broken.SetActive(true);
+                self.SetActive(false);
+            }
         }
 
         if (time <= 0 && habCleanControll == true)
